@@ -1,5 +1,4 @@
-# mortgage-calculator
-Калькулятор ипотеки с CI/CD# Калькулятор ипотеки с CI/CD
+# Калькулятор ипотеки с CI/CD
 
 Простое веб-приложение для расчета ипотечных платежей с автоматическим CI/CD pipeline.
 
@@ -21,4 +20,4 @@
 
 1. Установите зависимости:
 ```bash
-pip install -r requirements.txt"# ���⮢�� ����������" 
+pip install -r requirements.txt
