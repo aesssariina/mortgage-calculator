@@ -35,7 +35,7 @@ jobs:
       run: |
         python -m unittest tests/test_calculator.py
 
-  deploy:
+ deploy:
     name: Деплой на production
     runs-on: self-hosted
     needs: test
@@ -44,11 +44,11 @@ jobs:
     - uses: actions/checkout@v4
     - run: |
         echo "Копируем файлы..."
-        mkdir -p /opt/mortgage-calculator
-        cp app.py calculator.py requirements.txt /opt/mortgage-calculator/
+        mkdir -p /home/arina/actions-runner/_work/mortgage-calculator
+        cp app.py calculator.py requirements.txt /home/arina/actions-runner/_work/mortgage-calculator
     - run: |
         echo "Устанавливаем зависимости..."
-        cd /opt/mortgage-calculator
+        cd /home/arina/actions-runner/_work/mortgage-calculator
         pip3 install -r requirements.txt
     - run: |
         echo "Останавливаем предыдущую версию..."
@@ -56,8 +56,8 @@ jobs:
         sleep 2
     - run: |
         echo "Проверяем работу приложения..."
-        cd /opt/mortgage-calculator
+        cd /home/arina/actions-runner/_work/mortgage-calculator
         timeout 10s python3 app.py || echo "Приложение запущено для теста"
     - run: |
         echo "Деплой успешно завершен!"
-        ls -la /opt/mortgage-calculator/
+        ls -la /home/arina/actions-runner/_work/mortgage-calculator
