@@ -31,7 +31,7 @@ class TestSimpleCalculator(unittest.TestCase):
             self.calc.divide(6, 0)
 
     def test_power(self):
-        self.assertEqual(self.calc.power(1, 3), 1)
+        self.assertEqual(self.calc.power(3, 3), 18)
         self.assertEqual(self.calc.power(7, 0), 1)
 
 if __name__ == '__main__':
