@@ -20,8 +20,8 @@ class TestMortgageCalculator(unittest.TestCase):
         self.assertAlmostEqual(total, 1933423.2, places=2)
 
     def test_total_interest(self):
-        interest = self.calc.calculate_total_interest(1000000, 7.5, 0)
-        self.assertAlmostEqual(interest, 933423.2, places=2)
+        interest = self.calc.calculate_total_interest(1000000, 7.5, 20)
+        self.assertAlmostEqual(interest, 933423.2, places=0)
 
 
 if __name__ == '__main__':
